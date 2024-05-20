@@ -377,8 +377,6 @@ public class MyEditorWindow : EditorWindow
         PlayerSettings.applicationIdentifier = packageName;
         // Destroy existing VideoButton prefabs
         DestroyOldVideoButtons();
-
-
         if (icon != null)
         {
             // Set icon for Android platform
@@ -388,7 +386,6 @@ public class MyEditorWindow : EditorWindow
             };
             PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Android, iconArray);
         }
-
         // Get the "Home" GameObject from the scene hierarchy
         GameObject homeObject = GameObject.Find("Home");
         Material material = homeObject.GetComponent<MeshRenderer>().sharedMaterial;
@@ -397,7 +394,6 @@ public class MyEditorWindow : EditorWindow
         material.mainTexture = homeImage;
         // Spawn VideoButton prefabs
         SpawnVideoButtons();
-
         //add area to content size
         RectTransform myTransform = contentObject.GetComponent<RectTransform>();
         Vector2 sizeModified = myTransform.sizeDelta;
@@ -405,12 +401,14 @@ public class MyEditorWindow : EditorWindow
         myTransform.sizeDelta = sizeModified;
         for (int i=0; i< numberOfScenes; i++)
         {
-            sizeModified.x += 1300;
+            if (i % 3 == 0)
+            {
+                sizeModified.x += 1920;
+            }
         }
         myTransform.sizeDelta = sizeModified;
         // EditorApplication.isPlaying = true;
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
-
 }
 #endif

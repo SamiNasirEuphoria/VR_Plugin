@@ -20,8 +20,8 @@ public class HotspotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private void Start()
     {
         parentImage = myButton.image;
-
-        myButton.onClick.AddListener(OpenVideoObject);
+        //myButton.interactable = false;
+        //myButton.onClick.AddListener(OpenVideoObject);
         myLabelText.gameObject.SetActive(false);
         parentImage.color = new Color(parentImage.color.a, parentImage.color.g, parentImage.color.b, 0);
     }
@@ -37,15 +37,15 @@ public class HotspotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (fillCoroutine == null)
         {
-            //fillCoroutine = StartCoroutine(FillImageCoroutine());
+            fillCoroutine = StartCoroutine(FillImageCoroutine());
         }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         if (fillCoroutine != null)
         {
-            //StopCoroutine(fillCoroutine);
-            //fillCoroutine = StartCoroutine(DecreaseFillAmountCoroutine());
+            StopCoroutine(fillCoroutine);
+            fillCoroutine = StartCoroutine(DecreaseFillAmountCoroutine());
         }
     }
     IEnumerator FillImageCoroutine()
@@ -58,6 +58,7 @@ public class HotspotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             yield return null;
         }
         OpenVideoObject();
+        //myButton.interactable = true;
         fillCoroutine = null;
         fillImage.fillAmount = 0f;
     }

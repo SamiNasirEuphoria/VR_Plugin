@@ -42,6 +42,7 @@ public class ExperienceManager : MonoBehaviour
         }
         yield return new WaitForSeconds(2.0f);
         buttonResetState.Invoke();
+        SceneManager.Instance.myMediaPlayer.Stop();
         SceneManager.Instance.mainCanvasObject.SetActive(true);
         this.gameObject.SetActive(false);
     }

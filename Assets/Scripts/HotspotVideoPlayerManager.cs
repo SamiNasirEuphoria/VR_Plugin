@@ -65,6 +65,7 @@ public class HotspotVideoPlayerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         mainOBJ.SetActive(true);
+        SceneManager.Instance.hotspotMediaPlayer.Stop();
         this.gameObject.SetActive(false);
         SceneManager.Instance.myMediaPlayer.Play();
     }
