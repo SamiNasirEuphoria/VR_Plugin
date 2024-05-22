@@ -124,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7955719986409111767}
   - component: {fileID: 8612158821524895007}
+  - component: {fileID: 8253880463809624244}
   m_Layer: 0
   m_Name: HotspotButtonNew
   m_TagString: HotspotButton
@@ -166,6 +167,18 @@ MonoBehaviour:
   fillImage: {fileID: 6501588439010246801}
   fillSpeed: 0.75
   decreaseSpeed: 2
+--- !u!114 &8253880463809624244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025238495793268408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59db8ca6a71c40e288ead9eb0aedb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2408776689321149711
 GameObject:
   m_ObjectHideFlags: 0
